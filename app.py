@@ -2,7 +2,8 @@ import streamlit as st
 import os
 from pypdf import PdfReader
 from supabase import create_client
-from google.genai import ai
+# ✨ เปลี่ยนวิธีการดึงคลังเครื่องมือใหม่เพื่อให้เซิร์ฟเวอร์ Cloud เข้าใจง่ายขึ้น
+from google import genai
 from google.genai import types
 from dotenv import load_dotenv
 
@@ -20,7 +21,7 @@ def init_connections():
     gemini_key = os.getenv("GEMINI_API_KEY")
     
     supabase_client = create_client(supabase_url, supabase_key)
-    ai_client = ai.Client(api_key=gemini_key)
+    ai_client = genai.Client(api_key=gemini_key)  # ✨ เปลี่ยนมาใช้ตัวย่อใหม่ที่เชื่อมกันด้านบน
     return supabase_client, ai_client
 
 try:
