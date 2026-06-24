@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ตั้งค่าหน้าจอเว็บ
-st.set_page_config(page_title="PM360 Document Uploader", page_icon="📄", layout="centered")
+st.set_page_config(page_title="Document Uploader", page_icon="📄", layout="centered")
 
 # เชื่อมต่อ Supabase และ Gemini API
 @st.cache_resource
